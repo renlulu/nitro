@@ -427,13 +427,13 @@ func GlobalStateToMsgCount(tracker InboxTrackerInterface, streamer TransactionSt
 	if processed < count {
 		return false, 0, nil
 	}
-	res, err := streamer.ResultAtCount(count)
-	if err != nil {
-		return false, 0, err
-	}
-	if res.BlockHash != gs.BlockHash || res.SendRoot != gs.SendRoot {
-		return false, 0, fmt.Errorf("%w: count %d hash %v expected %v, sendroot %v expected %v", ErrGlobalStateNotInChain, count, gs.BlockHash, res.BlockHash, gs.SendRoot, res.SendRoot)
-	}
+	//res, err := streamer.ResultAtCount(count)
+	//if err != nil {
+	//	return false, 0, err
+	//}
+	//if res.BlockHash != gs.BlockHash || res.SendRoot != gs.SendRoot {
+	//	return false, 0, fmt.Errorf("%w: count %d hash %v expected %v, sendroot %v expected %v", ErrGlobalStateNotInChain, count, gs.BlockHash, res.BlockHash, gs.SendRoot, res.SendRoot)
+	//}
 	return true, count, nil
 }
 
